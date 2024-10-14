@@ -1,0 +1,134 @@
+#VRML_SIM R2023b utf8
+# license: Copyright Cyberbotics Ltd. Licensed for use only with Webots.
+# license url: https://cyberbotics.com/webots_assets_license
+# documentation url: https://webots.cloud/run?url=https://github.com/cyberbotics/webots/blob/released/projects/robots/softbank/nao/protos/Shelves.proto
+# keywords: furniture/storage
+# template language: javascript
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/VarnishedPine.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/CorrodedMetal.proto"
+
+PROTO Shelves [
+  field SFVec3f    translation 0 0 0
+  field SFRotation rotation    0 0 1 0
+  field SFVec2f    size        0.28 0.76   # Defines the size of the shelves.
+  field SFString   name        "shelves"
+]
+{
+   %<
+     let size = fields.size.value;
+     if (size.x <= 0 || size.y <= 0) {
+       size = fields.size.defaultValue;
+       console.error('\'size\' must be strictly positive. Value reset to (' + size.x + ', ' + size.y + ').');
+     }
+   >%
+  Solid {
+    translation IS translation
+    rotation IS rotation
+    children [
+      DEF SHELF_GROUP Group {
+        children [
+          Pose {
+            translation 0 %<= size.y / 2 >% 1.05 # 0 0.39 1.05
+            children [
+              Shape {
+                appearance DEF SHELF_APPEARANCE VarnishedPine {
+                  textureTransform TextureTransform {
+                    scale 4 4
+                  }
+                }
+                geometry DEF SIDE Box {
+                  size %<= size.x >% 0.02 2.1 # 0.28 0.02 2.1
+                }
+              }
+            ]
+          }
+          Pose {
+            translation 0 %<= -(size.y / 2) >% 1.05 # 0 -0.39 1.05
+            children [
+              Shape {
+                appearance USE SHELF_APPEARANCE
+                geometry USE SIDE
+              }
+            ]
+          }
+          Pose {
+            translation 0.12 0 0.04
+            children [
+              Shape {
+                appearance DEF METAL_SHELF CorrodedMetal {
+                  textureTransform TextureTransform {
+                    scale 4 4
+                  }
+                }
+                geometry DEF LOWER_FRONT Box {
+                  size 0.02 %<= size.y >% 0.08 # 0.02 0.76 0.08
+                }
+              }
+            ]
+          }
+          Pose {
+            translation 0 0 0.09
+            children [
+              Shape {
+                appearance USE METAL_SHELF
+                geometry DEF SHELF Box {
+                  size %<= size.x - 0.01 >% %<= size.y >% 0.02 # 0.27 0.76 0.02
+                }
+              }
+            ]
+          }
+          Pose {
+            translation 0 0 0.41
+            children [
+              Shape {
+                appearance USE METAL_SHELF
+                geometry USE SHELF
+              }
+            ]
+          }
+          Pose {
+            translation 0 0 0.73
+            children [
+              Shape {
+                appearance USE METAL_SHELF
+                geometry USE SHELF
+              }
+            ]
+          }
+          Pose {
+            translation 0 0 1.05
+            children [
+              Shape {
+                appearance USE METAL_SHELF
+                geometry USE SHELF
+              }
+            ]
+          }
+          Pose {
+            translation 0 0 1.37
+            children [
+              Shape {
+                appearance USE METAL_SHELF
+                geometry USE SHELF
+              }
+            ]
+          }
+          Pose {
+            translation 0 0 1.69
+            children [
+              Shape {
+                appearance USE METAL_SHELF
+                geometry USE SHELF
+              }
+            ]
+          }
+        ]
+      }
+    ]
+    name IS name
+    model "shelves"
+    boundingObject USE SHELF_GROUP
+    locked TRUE
+  }
+}

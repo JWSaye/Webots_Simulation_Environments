@@ -1,0 +1,561 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/apartment_structure/protos/Wall.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/apartment_structure/protos/Window.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/PaintedWood.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/apartment_structure/protos/Door.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/apartment_structure/protos/DoorLever.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/tables/protos/Table.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/tables/protos/Desk.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/chairs/protos/WoodenChair.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/stairs/protos/StraightStairs.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/stairs/protos/StraightStairsRail.proto"
+EXTERNPROTO "../protos/Shelves.proto"
+EXTERNPROTO "../protos/Book.proto"
+
+WorldInfo {
+  info [
+    "Sample of how the indoor objects can be placed"
+  ]
+  basicTimeStep 16
+}
+Viewpoint {
+  orientation -0.2302626749391406 0.16576791993443576 0.958905676930991 1.5519186955965236
+  position 6.288575777898113 0.9595197224935277 8.262390011372318
+  exposure 0.5
+}
+TexturedBackground {
+  texture "entrance_hall"
+  skybox FALSE
+  skyColor [
+    0.2 0.2 0.2
+  ]
+}
+DEF FLOOR Solid {
+  children [
+    Shape {
+      appearance Parquetry {
+        textureTransform TextureTransform {
+          scale 6 9
+        }
+      }
+      geometry DEF FLOOR_PLANE Plane {
+        size 63.28 6.78
+      }
+    }
+  ]
+  name "floor"
+  boundingObject USE FLOOR_PLANE
+  locked TRUE
+}
+Book {
+  translation 0.2 0.780007 0.26
+  rotation 0 0 1 1.5708
+}
+DEF FLOOR Solid {
+  translation 3.6 6.92 0
+  children [
+    Shape {
+      appearance Parquetry {
+        textureTransform TextureTransform {
+          scale 6 9
+        }
+      }
+      geometry DEF FLOOR_PLANE Plane {
+        size 70.48 7.06
+      }
+    }
+  ]
+  name "floor(1)"
+  boundingObject USE FLOOR_PLANE
+  locked TRUE
+}
+DEF FLOOR Solid {
+  translation 6.75 13.7 0
+  children [
+    Shape {
+      appearance Parquetry {
+        textureTransform TextureTransform {
+          scale 6 9
+        }
+      }
+      geometry DEF FLOOR_PLANE Plane {
+        size 76.78 6.5
+      }
+    }
+  ]
+  name "floor(2)"
+  boundingObject USE FLOOR_PLANE
+  locked TRUE
+}
+DEF FLOOR Solid {
+  translation 6.75 18.6 0
+  children [
+    Shape {
+      appearance Parquetry {
+        textureTransform TextureTransform {
+          scale 6 9
+        }
+      }
+      geometry DEF FLOOR_PLANE Plane {
+        size 78.28 3.37
+      }
+    }
+  ]
+  name "floor(3)"
+  boundingObject USE FLOOR_PLANE
+  locked TRUE
+}
+DEF FLOOR Solid {
+  translation 32.445 22.99 0
+  children [
+    Shape {
+      appearance Parquetry {
+        textureTransform TextureTransform {
+          scale 6 9
+        }
+      }
+      geometry DEF FLOOR_PLANE Plane {
+        size 41.39 5.43
+      }
+    }
+  ]
+  name "floor(6)"
+  boundingObject USE FLOOR_PLANE
+  locked TRUE
+}
+DEF FLOOR Solid {
+  translation -18.88 23 0
+  children [
+    Shape {
+      appearance Parquetry {
+        textureTransform TextureTransform {
+          scale 6 9
+        }
+      }
+      geometry DEF FLOOR_PLANE Plane {
+        size 41.39 5.44
+      }
+    }
+  ]
+  name "floor(7)"
+  boundingObject USE FLOOR_PLANE
+  locked TRUE
+}
+DEF FLOOR Solid {
+  translation -37.6 19.03 -1.5
+  children [
+    Shape {
+      appearance Parquetry {
+        textureTransform TextureTransform {
+          scale 6 9
+        }
+      }
+      geometry DEF FLOOR_PLANE Plane {
+        size 2.5 2.84
+      }
+    }
+  ]
+  name "floor(4)"
+  boundingObject USE FLOOR_PLANE
+  locked TRUE
+}
+DEF FLOOR Solid {
+  translation 51.05 19.03 -1.5
+  children [
+    Shape {
+      appearance Parquetry {
+        textureTransform TextureTransform {
+          scale 6 9
+        }
+      }
+      geometry DEF FLOOR_PLANE Plane {
+        size 2.5 2.84
+      }
+    }
+  ]
+  name "floor(5)"
+  boundingObject USE FLOOR_PLANE
+  locked TRUE
+}
+DEF ROOF Solid {
+  translation -4.95 -3.3 2.3999
+  rotation 1 0 0 3.14159
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 0.8 0.8
+        baseColorMap ImageTexture {
+          url [
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/default/worlds/textures/roughcast.jpg"
+          ]
+        }
+        roughness 0.5
+        metalness 0
+        textureTransform TextureTransform {
+          scale 8 8
+        }
+      }
+      geometry USE FLOOR_PLANE
+    }
+  ]
+  name "roof"
+  boundingObject USE FLOOR_PLANE
+  locked TRUE
+}
+Wall {
+  translation 0 -3.5 0
+  rotation 0 0 1 1.5708
+  name "wall 1"
+  size 0.3 63.36 2.4
+}
+Wall {
+  translation 31.79 -0.26 0
+  name "wall 2"
+  size 0.3 6.78 2.4
+}
+Wall {
+  translation 11.56 22.96 0
+  name "wall 16"
+  size 0.3 5.43 2.4
+}
+Wall {
+  translation 1.91 22.99 0
+  name "wall 17"
+  size 0.3 5.43 2.4
+}
+Wall {
+  translation 35.24 3.27 0
+  rotation 0 0 1 1.5708
+  name "wall 3"
+  size 0.3 7.2 2.4
+}
+Wall {
+  translation 38.98 6.64 0
+  name "wall 4"
+  size 0.3 7.04 2.4
+}
+Wall {
+  translation 41.91 10.3 0
+  rotation 0 0 1 1.5708
+  name "wall 5"
+  size 0.3 6.17 2.4
+}
+Wall {
+  translation 45.07 13.92 0
+  name "wall 6"
+  size 0.3 7.55 2.4
+}
+Wall {
+  translation -31.53 7.15 0
+  name "wall 9"
+  size 0.3 20.99 2.4
+}
+Wall {
+  translation 52.55 22.973 0
+  name "wall 7"
+  size 0.3 5.43 2.4
+}
+Wall {
+  translation -35.32 20.434 0
+  rotation 0 0 1 1.5708
+  name "wall 8"
+  size 0.3 7.3 2.4
+}
+Wall {
+  translation 48.75 20.434 0
+  rotation 0 0 1 1.5708
+  name "wall 14"
+  size 0.3 7.3 2.4
+}
+Wall {
+  translation -39.12 22.994 0
+  name "wall 12"
+  size 0.3 5.43 2.4
+}
+Wall {
+  translation -31.52 19.626 0
+  name "wall 13"
+  size 0.3 1.92 2.4
+}
+Wall {
+  translation 45.1 19.626 0
+  name "wall 15"
+  size 0.3 1.92 2.4
+}
+Wall {
+  translation 32.0525 25.53 0
+  rotation 0 0 1 1.5708
+  name "wall 10"
+  size 0.3 40.725 2.4
+}
+Wall {
+  translation -18.6125 25.56 0
+  rotation 0 0 1 1.5708
+  name "wall 11"
+  size 0.3 40.725 2.4
+}
+Window {
+  translation -31.53 24.78 0
+  name "window 1"
+  size 0.3 1.2 2.4
+  bottomWallHeight 0
+  windowHeight 2
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+}
+Window {
+  translation 45.11 24.78 0
+  rotation 0 0 1 3.14
+  name "window 6"
+  size 0.3 1.2 2.4
+  bottomWallHeight 0
+  windowHeight 2
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+}
+Window {
+  translation -31.53 21.16 0
+  name "window 2"
+  size 0.3 1.14 2.4
+  bottomWallHeight 0
+  windowHeight 2
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+}
+Window {
+  translation 45.11 21.16 0
+  rotation 0 0 1 3.14
+  name "window 4"
+  size 0.3 1.14 2.4
+  bottomWallHeight 0
+  windowHeight 2
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+}
+Window {
+  translation -31.53 22.3 0
+  name "window 3"
+  size 0.3 1.14 2.4
+  bottomWallHeight 0
+  windowHeight 2
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+}
+Window {
+  translation 45.11 22.3 0
+  rotation 0 0 1 3.14
+  name "window 5"
+  size 0.3 1.14 2.4
+  bottomWallHeight 0
+  windowHeight 2
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+}
+Door {
+  translation -9.9 -0.58 0
+  name "door 1"
+  size 0.3 1 2.4
+  position -7.004754766868204e-05
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+  doorHandle DoorLever {
+    canTurn TRUE
+    hasStaticParent TRUE
+  }
+}
+Door {
+  hidden translation_5 0.001000000000000556 -1.1102230246251565e-15 2.220446049250313e-15
+  hidden rotation_5 0 0 1 0
+  translation 45.07 18.17 0
+  name "emergency door 1"
+  size 0.3 1 2.4
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+  doorHandle DoorLever {
+    canTurn TRUE
+    hasStaticParent TRUE
+  }
+}
+Door {
+  hidden translation_5 0.0009999999999996956 1.6653345369377348e-15 2.220446049250313e-16
+  hidden rotation_5 0 0 1 0
+  translation -31.52 18.17 0
+  rotation 0 0 1 3.14
+  name "emergency door 2"
+  size 0.3 1 2.4
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+  doorHandle DoorLever {
+    canTurn TRUE
+    hasStaticParent TRUE
+  }
+}
+Door {
+  translation -31.53 23.52 0
+  name "glass door 1"
+  size 0.3 1.3 2.4
+  position -0.0002101426430055336
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+  doorHandle DoorLever {
+    canTurn TRUE
+    hasStaticParent TRUE
+  }
+}
+Door {
+  translation 45.11 23.52 0
+  rotation 0 0 1 3.14
+  name "glass door 2"
+  size 0.3 1.3 2.4
+  position -0.0002101426430055336
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+  doorHandle DoorLever {
+    canTurn TRUE
+    hasStaticParent TRUE
+  }
+}
+Table {
+  translation 42.9457 19.9356 0
+  rotation 0 0 1 1.5708
+  name "table 1"
+}
+Table {
+  translation 42.9457 14.2056 0
+  rotation 0 0 1 1.5708
+  name "table 2"
+}
+Desk {
+  translation -6.61501 23.7374 0
+  rotation 0 0 -1 -5.307179586466759e-06
+  name "desk 1"
+}
+Desk {
+  translation -11.775 23.7374 0
+  rotation 0 0 -1 -5.307179586466759e-06
+  name "desk 2"
+}
+Desk {
+  translation -16.615 23.7374 0
+  rotation 0 0 -1 -5.307179586466759e-06
+  name "desk 3"
+}
+Desk {
+  translation -21.025 23.7374 0
+  rotation 0 0 -1 -5.307179586466759e-06
+  name "desk 4"
+}
+WoodenChair {
+  translation -5.151405229464653 -0.8980083900695418 -0.0005514641141073917
+  rotation -8.534654467364133e-06 8.272843882670536e-06 0.99999999992936 1.5696594912227704
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
+}
+StraightStairs {
+  translation -36.2 18.17 -1.5
+  stepSize 0.4 1.1 0.03
+  nSteps 10
+  leftRail [
+    StraightStairsRail {
+      run 3.98
+      rise 1.49
+    }
+  ]
+  rightRail [
+    StraightStairsRail {
+      run 3.98
+      rise 1.49
+    }
+  ]
+}
+StraightStairs {
+  translation 49.69 18.1683 -1.53
+  rotation 0 0 1 3.14
+  name "straight stairs(2)"
+  stepSize 0.4 1.1 0.03
+  nSteps 10
+  leftRail [
+    StraightStairsRail {
+      run 3.98
+      rise 1.49
+    }
+  ]
+  rightRail [
+    StraightStairsRail {
+      run 3.98
+      rise 1.49
+    }
+  ]
+}
+StraightStairs {
+  translation -32.5798 19.8939 -3
+  rotation 0 0 1 3.14
+  name "straight stairs(1)"
+  stepSize 0.4 1.1 0.03
+  nSteps 10
+  leftRail [
+    StraightStairsRail {
+      run 3.98
+      rise 1.49
+    }
+  ]
+  rightRail [
+    StraightStairsRail {
+      run 3.98
+      rise 1.49
+    }
+  ]
+}
+StraightStairs {
+  translation 46 19.8939 -3
+  name "straight stairs(3)"
+  stepSize 0.4 1.1 0.03
+  nSteps 10
+  leftRail [
+    StraightStairsRail {
+      run 3.98
+      rise 1.49
+    }
+  ]
+  rightRail [
+    StraightStairsRail {
+      run 3.98
+      rise 1.49
+    }
+  ]
+}
+StraightStairsRail {
+  translation -36.39 18.72 -1.35
+  rotation 0 0 1 1.57
+  run 0.61
+  rise 0
+  nBalusters 4
+}
+StraightStairsRail {
+  translation 49.9 18.72 -1.35
+  rotation 0 0 1 1.57
+  name "straight stairs rail(1)"
+  run 0.66
+  rise 0
+  nBalusters 4
+}
+Shelves {
+  size 0.28 1.72
+}
