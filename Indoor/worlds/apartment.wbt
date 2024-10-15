@@ -14,6 +14,15 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/stairs/protos/StraightStairsRail.proto"
 EXTERNPROTO "../protos/Shelves.proto"
 EXTERNPROTO "../protos/Book.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/apartment_structure/protos/GenericDoorAppearance.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/computers/protos/DesktopComputer.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/computers/protos/Keyboard.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/computers/protos/Monitor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/computers/protos/ComputerMouse.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/bathroom/protos/Toilet.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/school_furniture/protos/Blackboard.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/bathroom/protos/BathroomSink.proto"
+EXTERNPROTO "../protos/Bathroom_Counter.proto"
 
 WorldInfo {
   info [
@@ -22,8 +31,8 @@ WorldInfo {
   basicTimeStep 16
 }
 Viewpoint {
-  orientation -0.6588993046598803 0.43837869586203526 0.6112902954677322 2.253359641119516
-  position -3.1873232139110668 14.056531394693199 130.78463158512494
+  orientation 0.45787041397871847 0.7865944322163072 -0.41427512984641296 1.9046107044627545
+  position 2.809239936199157 17.710817656326928 40.49891645600113
   exposure 0.5
 }
 TexturedBackground {
@@ -144,6 +153,68 @@ DEF FLOOR Solid {
   boundingObject USE FLOOR_PLANE
   locked TRUE
 }
+Bathroom_Counter {
+  translation -0.89 22.54 1.03
+  size 0.66 0.34 0.06
+}
+Bathroom_Counter {
+  translation 0.46 22.54 1.03
+  name "bathroom_counter(1)"
+  size 0.66 0.34 0.06
+}
+ComputerMouse {
+  translation -3.94 21.8314 0.78998
+  rotation -0.7140479494081394 -1.2857955246509062e-06 0.7000967975532939 5.144199498569738e-06
+}
+ComputerMouse {
+  translation -3.94 20.9914 0.78998
+  rotation -0.7140479494081394 -1.2857955246509062e-06 0.7000967975532939 5.144199498569738e-06
+  name "computer mouse(1)"
+}
+ComputerMouse {
+  translation -3.94 20.0714 0.78998
+  rotation -0.7140479494081394 -1.2857955246509062e-06 0.7000967975532939 5.144199498569738e-06
+  name "computer mouse(2)"
+}
+ComputerMouse {
+  translation -3.94 19.1014 0.78998
+  rotation -0.7140479494081394 -1.2857955246509062e-06 0.7000967975532939 5.144199498569738e-06
+  name "computer mouse(3)"
+}
+Monitor {
+  translation -3.52045 22.15 0.79
+  rotation 0 0 1 3.14
+}
+Monitor {
+  translation -3.52045 21.31 0.79
+  rotation 0 0 1 3.14
+  name "monitor 2"
+}
+Monitor {
+  translation -3.52045 20.42 0.79
+  rotation 0 0 1 3.14
+  name "monitor 2(1)"
+}
+Monitor {
+  translation -3.52045 19.45 0.79
+  rotation 0 0 1 3.14
+  name "monitor 2(2)"
+}
+Keyboard {
+  translation -3.94 22.17 0.79
+}
+Keyboard {
+  translation -3.94 21.31 0.79
+  name "keyboard 2"
+}
+Keyboard {
+  translation -3.94 20.42 0.79
+  name "keyboard 2(1)"
+}
+Keyboard {
+  translation -3.94 19.47 0.79
+  name "keyboard 2(2)"
+}
 DEF FLOOR Solid {
   translation -37.6 19.03 -1.5
   children [
@@ -198,6 +269,9 @@ DEF FLOOR Solid {
   boundingObject USE FLOOR_PLANE
   locked TRUE
 }
+Blackboard {
+  translation 4.01 21.3 1.2
+}
 DEF ROOF Solid {
   translation -4.95 -3.3 2.3999
   rotation 1 0 0 3.14159
@@ -245,14 +319,86 @@ Wall {
   size 0.3 2.99 2.4
 }
 Wall {
-  translation -1.76 20.44 0
-  name "wall 21"
-  size 0.3 5.13 2.4
+  translation -2.7 25.05 0
+  name "wall 25"
+  size 0.3 0.723 2.4
 }
 Wall {
-  translation 4.16 20.44 0
+  translation -2.7 23.345 0
+  name "wall 26"
+  size 0.3 0.695 2.4
+}
+Wall {
+  translation -2.7 20.23 0
+  name "wall 21"
+  size 0.3 5.55 2.4
+}
+Wall {
+  translation 3.855 21.26 0
   name "wall 23"
-  size 0.3 5.13 2.4
+  size 0.3 3.5 2.4
+}
+Wall {
+  translation -0.6 17.31 0
+  rotation 0 0 1 1.5708
+  name "wall 27"
+  size 0.3 4.5 2.4
+}
+Wall {
+  translation 1.5 18.485 0
+  name "wall 28"
+  size 0.3 2.05 2.4
+}
+Wall {
+  translation 2.0275 19.66 0
+  rotation 0 0 1 1.5708
+  name "wall 29"
+  size 0.3 1.355 2.4
+}
+Wall {
+  translation -1.16 19.66 0
+  rotation 0 0 1 1.5708
+  name "wall 30"
+  size 0.03 0.71 1.8
+}
+Wall {
+  translation -2.38 19.66 0
+  rotation 0 0 1 1.5708
+  name "wall 31"
+  size 0.03 0.34 1.8
+}
+Wall {
+  translation 0.075 19.66 0
+  rotation 0 0 1 1.5708
+  name "wall 32"
+  size 0.03 0.35 1.8
+}
+Wall {
+  translation 0.075 19.66 0
+  rotation 0 0 1 1.5708
+  name "wall 33"
+  size 0.03 0.35 1.8
+}
+Wall {
+  translation 1.15 19.66 0
+  rotation 0 0 1 1.5708
+  name "wall 34"
+  size 0.03 0.4 1.8
+}
+Wall {
+  translation 0.24 18.5525 0.3
+  name "wall 35"
+  size 0.03 2.185 1.5
+}
+Wall {
+  translation -0.82 18.5525 0.3
+  name "wall 36"
+  size 0.03 2.185 1.5
+}
+Wall {
+  translation 9.655 21.26 0
+  name "wall 24"
+  size 0.3 3.5 2.4
 }
 Wall {
   translation 35.24 3.27 0
@@ -320,22 +466,22 @@ Wall {
   size 0.3 40.725 2.4
 }
 Wall {
-  translation -18.6125 25.56 0
+  translation -18.59 25.56 0
   rotation 0 0 1 1.5708
   name "wall 11"
   size 0.3 40.725 2.4
 }
 Wall {
-  translation 3.0375 22.86 0
+  translation 2.8825 22.86 0
   rotation 0 0 1 1.5708
   name "wall 18"
-  size 0.3 1.95 2.4
+  size 0.3 1.645 2.4
 }
 Wall {
-  translation 0.0574921 22.86 0
+  translation -0.409 22.86 0
   rotation 0 0 1 1.5708
   name "wall 20"
-  size 0.3 3.4 2.4
+  size 0.3 4.4 2.4
 }
 Wall {
   translation 13.4475 22.86 0
@@ -344,10 +490,56 @@ Wall {
   size 0.3 3.4 2.4
 }
 Wall {
-  translation 10.4775 22.86 0
+  translation 10.6275 22.86 0
   rotation 0 0 1 1.5708
   name "wall 19"
-  size 0.3 1.95 2.4
+  size 0.3 1.645 2.4
+}
+Wall {
+  translation 6.8175 17.06 0
+  rotation 0 0 1 1.5708
+  name "atrium 1"
+  size 0.3 5.675 1.1
+}
+Wall {
+  translation 6.8175 11.085 0
+  rotation 0 0 1 1.5708
+  name "atrium 2"
+  size 0.3 5.675 1.1
+}
+Wall {
+  translation 9.805 14.0725 0
+  name "atrium 3"
+  size 0.3 5.675 1.1
+}
+Wall {
+  translation 3.83 14.0725 0
+  name "atrium 4"
+  size 0.3 5.675 1.1
+}
+Wall {
+  translation 3.43 17.46 0
+  rotation 0 0 1 1.5708
+  name "column 1"
+  size 1.1 1.1 2.4
+}
+Wall {
+  translation 3.43 10.685 0
+  rotation 0 0 1 1.5708
+  name "column 4"
+  size 1.1 1.1 2.4
+}
+Wall {
+  translation 10.205 17.46 0
+  rotation 0 0 1 1.5708
+  name "column 2"
+  size 1.1 1.1 2.4
+}
+Wall {
+  translation 10.205 10.685 0
+  rotation 0 0 1 1.5708
+  name "column 3"
+  size 1.1 1.1 2.4
 }
 Window {
   translation -31.53 24.78 0
@@ -412,15 +604,111 @@ Window {
     colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
   }
 }
+Window {
+  translation 4.505 22.86 0
+  rotation 0 0 1 1.5708
+  name "window 7"
+  size 0.3 1 2.4
+  bottomWallHeight 0
+  windowHeight 2
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+}
+Window {
+  translation 5.505 22.86 0
+  rotation 0 0 1 1.5708
+  name "window 8"
+  size 0.3 1 2.4
+  bottomWallHeight 0
+  windowHeight 2
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+}
+Window {
+  translation 6.755 22.86 0
+  rotation 0 0 1 1.5708
+  name "window 9"
+  size 0.3 1.5 2.4
+  bottomWallHeight 0
+  windowHeight 2
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+}
+Window {
+  translation 8.005 22.86 0
+  rotation 0 0 1 1.5708
+  name "window 10"
+  size 0.3 1 2.4
+  bottomWallHeight 0
+  windowHeight 2
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+}
+Window {
+  translation 9.005 22.86 0
+  rotation 0 0 1 1.5708
+  name "window 11"
+  size 0.3 1 2.4
+  bottomWallHeight 0
+  windowHeight 2
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+}
+Window {
+  translation 9 19.66 0
+  rotation 0 0 1 1.5708
+  name "window 12"
+  size 0.3 1 2.4
+  bottomWallHeight 0
+  windowHeight 2
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+}
+Window {
+  translation 8 19.66 0
+  rotation 0 0 1 1.5708
+  name "window 13"
+  size 0.3 1 2.4
+  bottomWallHeight 0
+  windowHeight 2
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+}
+Window {
+  translation 5.505 19.66 0
+  rotation 0 0 1 1.5708
+  name "window 14"
+  size 0.3 1 2.4
+  bottomWallHeight 0
+  windowHeight 2
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+}
+Window {
+  translation 4.505 19.66 0
+  rotation 0 0 1 1.5708
+  name "window 15"
+  size 0.3 1 2.4
+  bottomWallHeight 0
+  windowHeight 2
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+}
 Door {
-  hidden translation_5 0.0010332730733279838 1.393829664320112e-05 1.1102230246251565e-16
-  hidden rotation_5 0 0 -1 7.004754236490712e-05
-  hidden translation_7 0 0 0
-  hidden rotation_7 1 0 0 2.428956923113492e-05
-  translation -9.9 -0.58 0
+  translation 27.9697 1.56 0
+  rotation 0 0 1 3.14
   name "door 1"
   size 0.3 1 2.4
-  position -0.00014009509533737425
+  position -0.00021014264300599222
   frameAppearance PaintedWood {
     colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
   }
@@ -430,14 +718,10 @@ Door {
   }
 }
 Door {
-  hidden translation_5 0.0010000000000005838 -1.1657341758564144e-15 2.4424906541753444e-15
-  hidden rotation_5 0 0 1 0
-  hidden translation_7 0 0 0
-  hidden rotation_7 1 0 0 2.428956923113492e-05
   translation 45.07 18.17 0
   name "emergency door 1"
   size 0.3 1 2.4
-  position -7.004754766869075e-05
+  position -0.0001400950953376185
   frameAppearance PaintedWood {
     colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
   }
@@ -447,15 +731,11 @@ Door {
   }
 }
 Door {
-  hidden translation_5 0.000999999999999751 1.609823385706477e-15 4.440892098500626e-16
-  hidden rotation_5 0 0 1 0
-  hidden translation_7 0 0 0
-  hidden rotation_7 1 0 0 2.4289550948003888e-05
   translation -31.52 18.17 0
   rotation 0 0 1 3.14
   name "emergency door 2"
   size 0.3 1 2.4
-  position -7.004754766867784e-05
+  position -0.00014009509533735568
   frameAppearance PaintedWood {
     colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
   }
@@ -465,14 +745,10 @@ Door {
   }
 }
 Door {
-  hidden translation_5 0.0010757495365050496 2.4113596857167074e-05 -2.220446049250313e-16
-  hidden rotation_5 0 0 -1 0.00012119691800181547
-  hidden translation_7 0 0 0
-  hidden rotation_7 1 0 0 2.428956923113492e-05
   translation -31.53 23.52 0
   name "glass door 1"
   size 0.3 1.3 2.4
-  position -0.00033133956327040243
+  position -0.00045253648353542336
   frameAppearance PaintedWood {
     colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
   }
@@ -482,15 +758,130 @@ Door {
   }
 }
 Door {
-  hidden translation_5 0.0010757495365051328 2.4113596857278097e-05 -2.220446049250313e-16
-  hidden rotation_5 0 0 -1 0.00012119691800181547
-  hidden translation_7 0 0 0
-  hidden rotation_7 1 0 0 2.4289550948003888e-05
   translation 45.11 23.52 0
   rotation 0 0 1 3.14
   name "glass door 2"
   size 0.3 1.3 2.4
-  position -0.00033133956327055454
+  position -0.09263351366124448
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+  doorHandle DoorLever {
+    canTurn TRUE
+    hasStaticParent TRUE
+  }
+}
+Door {
+  translation 6.755 19.66 0
+  rotation 0 0 1 -1.5708
+  name "glass door 3"
+  size 0.3 1.5 2.4
+  position -0.0005272180018711017
+  doorAppearance GenericDoorAppearance {
+    colorOverride 0.498039 0.498039 0.498039
+  }
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+  doorHandle DoorLever {
+    canTurn TRUE
+    hasStaticParent TRUE
+  }
+}
+Door {
+  translation -2.7 24.1925 0
+  rotation 0 0 1 3.14
+  name "closet door 1"
+  size 0.3 1 2.4
+  position -0.0005272180018711017
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+  doorHandle DoorLever {
+    canTurn TRUE
+    hasStaticParent TRUE
+  }
+}
+Door {
+  translation 14.7 24.1925 0
+  name "closet door 2"
+  size 0.3 1 2.4
+  position -0.0005272180018711017
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+  doorHandle DoorLever {
+    canTurn TRUE
+    hasStaticParent TRUE
+  }
+}
+Door {
+  translation 17.58 2.0125 0
+  name "closet door 3"
+  size 0.3 1 2.4
+  position -0.0005272180018711017
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+  doorHandle DoorLever {
+    canTurn TRUE
+    hasStaticParent TRUE
+  }
+}
+Door {
+  translation 3.205 19.66 0
+  rotation 0 0 1 -1.5708
+  name "women's bathroom door"
+  size 0.3 1 2.4
+  position -0.0005272180018711017
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+  doorHandle DoorLever {
+    canTurn TRUE
+    hasStaticParent TRUE
+  }
+}
+Door {
+  translation -1.86 19.66 0.3
+  rotation 0 0 1 1.5708
+  name "women's stall door 1"
+  size 0.03 0.7 1.5
+  doorThickness 0.01
+  frameHeight 1.5
+  frameSize 0 0 0
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+  doorHandle DoorLever {
+    canTurn TRUE
+    hasStaticParent TRUE
+  }
+}
+Door {
+  translation -0.45 19.66 0.3
+  rotation 0 0 1 1.5708
+  name "women's stall door 2"
+  size 0.03 0.7 1.5
+  doorThickness 0.01
+  frameHeight 1.5
+  frameSize 0 0 0
+  frameAppearance PaintedWood {
+    colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
+  }
+  doorHandle DoorLever {
+    canTurn TRUE
+    hasStaticParent TRUE
+  }
+}
+Door {
+  translation 0.6 19.66 0.3
+  rotation 0 0 1 1.5708
+  name "women's stall door 3"
+  size 0.03 0.7 1.5
+  doorThickness 0.01
+  frameHeight 1.5
+  frameSize 0 0 0
   frameAppearance PaintedWood {
     colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
   }
@@ -509,29 +900,140 @@ Table {
   rotation 0 0 1 1.5708
   name "table 2"
 }
+Table {
+  translation -3.5743 20.8356 0
+  name "table 3"
+  size 1 3.9 0.74
+}
+Table {
+  translation -2.5743 7.6556 0
+  name "table 4"
+  size 1 3.9 0.74
+}
+Table {
+  translation 6.98567 21.3256 0
+  rotation 0 0 1 1.5708
+  name "table 5"
+  size 1 3.5 0.74
+}
 Desk {
-  translation -6.61501 23.7374 0
+  translation -27.6449 -0.462754 0
   rotation 0 0 -1 -5.307179586466759e-06
   name "desk 1"
 }
-Desk {
-  translation -11.775 23.7374 0
-  rotation 0 0 -1 -5.307179586466759e-06
-  name "desk 2"
-}
-Desk {
-  translation -16.615 23.7374 0
-  rotation 0 0 -1 -5.307179586466759e-06
-  name "desk 3"
-}
-Desk {
-  translation -21.025 23.7374 0
-  rotation 0 0 -1 -5.307179586466759e-06
-  name "desk 4"
+WoodenChair {
+  translation -3.97596 22.1623 -0.000530819
+  rotation -0.000257261668170155 0.039874870168368874 -0.9992046479803274 0.0009875705397058942
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
 }
 WoodenChair {
-  translation -5.151405229469378 -0.8980083945905005 -0.00053984482567071
-  rotation -1.9826468873558407e-05 1.957521643046331e-05 0.9999999996118611 1.5696594915412776
+  translation -3.97676 21.3623 -0.000530596
+  rotation -0.000257261668170155 0.039874870168368874 -0.9992046479803274 0.0009875705397058942
+  name "wooden chair 2"
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
+}
+WoodenChair {
+  translation -3.97776 20.3623 -0.000530308
+  rotation -0.000257261668170155 0.039874870168368874 -0.9992046479803274 0.0009875705397058942
+  name "wooden chair 3"
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
+}
+WoodenChair {
+  translation -3.97875 19.3723 -0.000530033
+  rotation -0.000257261668170155 0.039874870168368874 -0.9992046479803274 0.0009875705397058942
+  name "wooden chair 4"
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
+}
+WoodenChair {
+  translation 8.31125 20.9118 0.0612294
+  rotation -0.000257261668170155 0.039874870168368874 -0.9992046479803274 -1.5708
+  name "wooden chair 4(1)"
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
+}
+WoodenChair {
+  translation 7.55195 20.9121 0.0311434
+  rotation -0.000257261668170155 0.039874870168368874 -0.9992046479803274 -1.5708
+  name "wooden chair 4(2)"
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
+}
+WoodenChair {
+  translation 6.81265 20.9121 0.00184944
+  rotation -0.000257261668170155 0.039874870168368874 -0.9992046479803274 -1.5708
+  name "wooden chair 4(3)"
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
+}
+WoodenChair {
+  translation 5.94344 20.9121 -0.032591
+  rotation -0.000257261668170155 0.039874870168368874 -0.9992046479803274 -1.5708
+  name "wooden chair 4(4)"
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
+}
+WoodenChair {
+  translation 5.83353 21.8618 0.00945708
+  rotation -0.000257261668170155 0.039874870168368874 -0.9992046479803274 1.5708
+  name "wooden chair 4(5)"
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
+}
+WoodenChair {
+  translation 6.74272 21.862 -0.0270343
+  rotation -0.000257261668170155 0.039874870168368874 -0.9992046479803274 1.5708
+  name "wooden chair 4(6)"
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
+}
+WoodenChair {
+  translation 7.582 21.8624 -0.0607183
+  rotation -0.000257261668170155 0.039874870168368874 -0.9992046479803274 1.5708
+  name "wooden chair 4(7)"
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
+}
+WoodenChair {
+  translation 8.28142 21.8629 -0.088788
+  rotation -0.000257261668170155 0.039874870168368874 -0.9992046479803274 1.5708
+  name "wooden chair 4(8)"
   physics Physics {
     centerOfMass [
       0 0 0.45
@@ -627,5 +1129,49 @@ StraightStairsRail {
   nBalusters 4
 }
 Shelves {
+  rotation 0 0 1 1.5708
   size 0.28 1.72
+}
+DesktopComputer {
+  translation -3.62 22.51 0.82
+}
+DesktopComputer {
+  translation -3.62 21.67 0.82
+  name "desktop computer 2"
+}
+DesktopComputer {
+  translation -3.62 20.76 0.82
+  name "desktop computer 2(1)"
+}
+DesktopComputer {
+  translation -3.62 19.87 0.82
+  name "desktop computer 2(2)"
+}
+Toilet {
+  translation -2.01 18.15 0
+  rotation 0 0 1 1.5708
+}
+Toilet {
+  translation -0.39 18.15 0
+  rotation 0 0 1 1.5708
+  name "toilet(1)"
+}
+Toilet {
+  translation 0.7 18.15 0
+  rotation 0 0 1 1.5708
+  name "toilet(2)"
+}
+BathroomSink {
+  translation -1.56999 22.71 1
+  rotation 0 0 1 -1.5708
+}
+BathroomSink {
+  translation -0.22 22.71 1
+  rotation 0 0 1 -1.5708
+  name "sink 2"
+}
+BathroomSink {
+  translation 1.13015 22.71 1
+  rotation 0 0 1 -1.5708
+  name "sink 3"
 }
