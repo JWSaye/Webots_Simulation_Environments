@@ -22,8 +22,8 @@ WorldInfo {
   basicTimeStep 16
 }
 Viewpoint {
-  orientation -0.2302626749391406 0.16576791993443576 0.958905676930991 1.5519186955965236
-  position 6.288575777898113 0.9595197224935277 8.262390011372318
+  orientation -0.6588993046598803 0.43837869586203526 0.6112902954677322 2.253359641119516
+  position -3.1873232139110668 14.056531394693199 130.78463158512494
   exposure 0.5
 }
 TexturedBackground {
@@ -180,6 +180,24 @@ DEF FLOOR Solid {
   boundingObject USE FLOOR_PLANE
   locked TRUE
 }
+DEF FLOOR Solid {
+  translation 6.73 21.45 0
+  children [
+    Shape {
+      appearance Parquetry {
+        textureTransform TextureTransform {
+          scale 6 9
+        }
+      }
+      geometry DEF FLOOR_PLANE Plane {
+        size 10.05 2.62
+      }
+    }
+  ]
+  name "floor(8)"
+  boundingObject USE FLOOR_PLANE
+  locked TRUE
+}
 DEF ROOF Solid {
   translation -4.95 -3.3 2.3999
   rotation 1 0 0 3.14159
@@ -217,14 +235,24 @@ Wall {
   size 0.3 6.78 2.4
 }
 Wall {
-  translation 11.56 22.96 0
+  translation 11.6 24.19 0
   name "wall 16"
-  size 0.3 5.43 2.4
+  size 0.3 2.97 2.4
 }
 Wall {
-  translation 1.91 22.99 0
+  translation 1.91 24.2 0
   name "wall 17"
-  size 0.3 5.43 2.4
+  size 0.3 2.99 2.4
+}
+Wall {
+  translation -1.76 20.44 0
+  name "wall 21"
+  size 0.3 5.13 2.4
+}
+Wall {
+  translation 4.16 20.44 0
+  name "wall 23"
+  size 0.3 5.13 2.4
 }
 Wall {
   translation 35.24 3.27 0
@@ -297,6 +325,30 @@ Wall {
   name "wall 11"
   size 0.3 40.725 2.4
 }
+Wall {
+  translation 3.0375 22.86 0
+  rotation 0 0 1 1.5708
+  name "wall 18"
+  size 0.3 1.95 2.4
+}
+Wall {
+  translation 0.0574921 22.86 0
+  rotation 0 0 1 1.5708
+  name "wall 20"
+  size 0.3 3.4 2.4
+}
+Wall {
+  translation 13.4475 22.86 0
+  rotation 0 0 1 1.5708
+  name "wall 22"
+  size 0.3 3.4 2.4
+}
+Wall {
+  translation 10.4775 22.86 0
+  rotation 0 0 1 1.5708
+  name "wall 19"
+  size 0.3 1.95 2.4
+}
 Window {
   translation -31.53 24.78 0
   name "window 1"
@@ -361,10 +413,14 @@ Window {
   }
 }
 Door {
+  hidden translation_5 0.0010332730733279838 1.393829664320112e-05 1.1102230246251565e-16
+  hidden rotation_5 0 0 -1 7.004754236490712e-05
+  hidden translation_7 0 0 0
+  hidden rotation_7 1 0 0 2.428956923113492e-05
   translation -9.9 -0.58 0
   name "door 1"
   size 0.3 1 2.4
-  position -7.004754766868204e-05
+  position -0.00014009509533737425
   frameAppearance PaintedWood {
     colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
   }
@@ -374,11 +430,14 @@ Door {
   }
 }
 Door {
-  hidden translation_5 0.001000000000000556 -1.1102230246251565e-15 2.220446049250313e-15
+  hidden translation_5 0.0010000000000005838 -1.1657341758564144e-15 2.4424906541753444e-15
   hidden rotation_5 0 0 1 0
+  hidden translation_7 0 0 0
+  hidden rotation_7 1 0 0 2.428956923113492e-05
   translation 45.07 18.17 0
   name "emergency door 1"
   size 0.3 1 2.4
+  position -7.004754766869075e-05
   frameAppearance PaintedWood {
     colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
   }
@@ -388,12 +447,15 @@ Door {
   }
 }
 Door {
-  hidden translation_5 0.0009999999999996956 1.6653345369377348e-15 2.220446049250313e-16
+  hidden translation_5 0.000999999999999751 1.609823385706477e-15 4.440892098500626e-16
   hidden rotation_5 0 0 1 0
+  hidden translation_7 0 0 0
+  hidden rotation_7 1 0 0 2.4289550948003888e-05
   translation -31.52 18.17 0
   rotation 0 0 1 3.14
   name "emergency door 2"
   size 0.3 1 2.4
+  position -7.004754766867784e-05
   frameAppearance PaintedWood {
     colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
   }
@@ -403,10 +465,14 @@ Door {
   }
 }
 Door {
+  hidden translation_5 0.0010757495365050496 2.4113596857167074e-05 -2.220446049250313e-16
+  hidden rotation_5 0 0 -1 0.00012119691800181547
+  hidden translation_7 0 0 0
+  hidden rotation_7 1 0 0 2.428956923113492e-05
   translation -31.53 23.52 0
   name "glass door 1"
   size 0.3 1.3 2.4
-  position -0.0002101426430055336
+  position -0.00033133956327040243
   frameAppearance PaintedWood {
     colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
   }
@@ -416,11 +482,15 @@ Door {
   }
 }
 Door {
+  hidden translation_5 0.0010757495365051328 2.4113596857278097e-05 -2.220446049250313e-16
+  hidden rotation_5 0 0 -1 0.00012119691800181547
+  hidden translation_7 0 0 0
+  hidden rotation_7 1 0 0 2.4289550948003888e-05
   translation 45.11 23.52 0
   rotation 0 0 1 3.14
   name "glass door 2"
   size 0.3 1.3 2.4
-  position -0.0002101426430055336
+  position -0.00033133956327055454
   frameAppearance PaintedWood {
     colorOverride 0.13333333333333333 0.13333333333333333 0.13333333333333333
   }
@@ -460,8 +530,8 @@ Desk {
   name "desk 4"
 }
 WoodenChair {
-  translation -5.151405229464653 -0.8980083900695418 -0.0005514641141073917
-  rotation -8.534654467364133e-06 8.272843882670536e-06 0.99999999992936 1.5696594912227704
+  translation -5.151405229469378 -0.8980083945905005 -0.00053984482567071
+  rotation -1.9826468873558407e-05 1.957521643046331e-05 0.9999999996118611 1.5696594915412776
   physics Physics {
     centerOfMass [
       0 0 0.45
