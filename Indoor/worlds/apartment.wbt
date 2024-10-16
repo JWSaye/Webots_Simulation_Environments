@@ -34,8 +34,8 @@ WorldInfo {
   basicTimeStep 16
 }
 Viewpoint {
-  orientation -0.4825134977787139 0.6100980486806895 0.6284593029444039 1.7985870356582798
-  position -2.536982941505198 -19.96279087872352 109.3343051015659
+  orientation -0.44159831246945863 0.14822801686148318 0.8848838259576441 2.5640548986145646
+  position 34.684376111758255 7.166136524521217 31.5041802205362
   exposure 0.5
 }
 TexturedBackground {
@@ -174,6 +174,11 @@ DEF FLOOR Solid {
   boundingObject USE FLOOR_PLANE
   locked TRUE
 }
+Worktop {
+  translation -0.6 16.94 0.74
+  name "worktop(4)"
+  size 4.5 0.44 0.06
+}
 DEF FLOOR Solid {
   translation -13.85 13.7 0
   children [
@@ -280,9 +285,34 @@ ComputerMouse {
   name "computer mouse(2)"
 }
 ComputerMouse {
-  translation -3.94 19.1014 -1.961999897669847e-06
+  translation -3.94 19.1014 0.74
   rotation -0.7140479495255051 -1.2858074138014439e-06 0.7000967974335895 5.144199497736996e-06
   name "computer mouse(3)"
+}
+ComputerMouse {
+  translation -1.69 16.8614 0.78
+  rotation -1.836599999993805e-06 1.836599999993805e-06 0.9999999999966269 1.5708
+  name "computer mouse(4)"
+}
+ComputerMouse {
+  translation -0.84 7.0014 0.72
+  rotation 1.836599999993805e-06 -1.836599999993805e-06 -0.9999999999966269 -1.5707953071795862
+  name "computer mouse(7)"
+}
+ComputerMouse {
+  translation -1.66 7.9614 0.72
+  rotation 1.836599999993805e-06 1.836599999993805e-06 0.9999999999966269 -1.5707953071795862
+  name "computer mouse(8)"
+}
+ComputerMouse {
+  translation -0.23 16.8614 0.78
+  rotation -1.836599999993805e-06 1.836599999993805e-06 0.9999999999966269 1.5708
+  name "computer mouse(5)"
+}
+ComputerMouse {
+  translation 1.18 16.8614 0.78
+  rotation -1.836599999993805e-06 1.836599999993805e-06 0.9999999999966269 1.5708
+  name "computer mouse(6)"
 }
 Monitor {
   translation -3.52045 22.15 0.79
@@ -303,6 +333,31 @@ Monitor {
   rotation 0 0 1 3.14
   name "monitor 2(2)"
 }
+Monitor {
+  translation -1.99409 17.1182 0.79
+  rotation 0 0 1 -1.5723853071795864
+  name "monitor 2(3)"
+}
+Monitor {
+  translation -1.20965 7.37679 0.71
+  rotation 0 0 1 -1.5723853071795864
+  name "monitor 2(6)"
+}
+Monitor {
+  translation -1.20925 7.57679 0.71
+  rotation 0 0 1 1.56921
+  name "monitor 2(7)"
+}
+Monitor {
+  translation -0.56409 17.1169 0.79
+  rotation 0 0 1 -1.5723853071795864
+  name "monitor 2(4)"
+}
+Monitor {
+  translation 0.86591 17.1154 0.79
+  rotation 0 0 1 -1.5723853071795864
+  name "monitor 2(5)"
+}
 Keyboard {
   translation -3.94 22.17 0.79
 }
@@ -317,6 +372,31 @@ Keyboard {
 Keyboard {
   translation -3.94 19.47 0.79
   name "keyboard 2(2)"
+}
+Keyboard {
+  translation -2 16.87 0.79
+  rotation 0 0 1 1.5708
+  name "keyboard 2(3)"
+}
+Keyboard {
+  translation -1.26 6.94 0.72
+  rotation 0 0 1 1.5708
+  name "keyboard 2(6)"
+}
+Keyboard {
+  translation -1.26 7.95 0.72
+  rotation 0 0 1 -1.5707953071795862
+  name "keyboard 2(7)"
+}
+Keyboard {
+  translation -0.58 16.87 0.79
+  rotation 0 0 1 1.5708
+  name "keyboard 2(4)"
+}
+Keyboard {
+  translation 0.84 16.87 0.79
+  rotation 0 0 1 1.5708
+  name "keyboard 2(5)"
 }
 DEF FLOOR Solid {
   translation -37.6 19.03 -1.5
@@ -379,6 +459,16 @@ Blackboard {
   translation 27.6 -3.34 1.2
   rotation 0 0 1 1.5708
   name "blackboard 2"
+}
+Blackboard {
+  translation -35.32 20.586 1.2
+  rotation 0 0 1 1.5708
+  name "blackboard 3"
+}
+Blackboard {
+  translation 48.75 20.586 1.2
+  rotation 0 0 1 1.5708
+  name "blackboard 4"
 }
 DEF ROOF Solid {
   translation -4.95 -3.3 2.3999
@@ -527,6 +617,26 @@ Wall {
   translation -2.7 20.23 0
   name "wall 21"
   size 0.3 5.55 2.4
+}
+Wall {
+  translation -2.7 16.94 0
+  name "wall 21(1)"
+  size 0.3 0.45 2.4
+}
+Wall {
+  translation 1.5 16.94 0
+  name "wall 21(2)"
+  size 0.3 0.45 2.4
+}
+Wall {
+  translation 0.1 16.94 0
+  name "wall 21(3)"
+  size 0.3 0.45 2.4
+}
+Wall {
+  translation -1.3 16.94 0
+  name "wall 21(4)"
+  size 0.3 0.45 2.4
 }
 Wall {
   translation 16.3 20.23 0
@@ -1382,9 +1492,40 @@ Door {
   }
 }
 Table {
-  translation 39.8657 24.4056 0
-  rotation 0 0 1 -3.1415853071795863
+  translation 40.9657 23.8656 0
+  rotation 0 0 -1 3.14159
   name "table 1"
+  size 1 3 0.74
+}
+Table {
+  translation 19.8857 21.3456 0
+  rotation 0 0 -1 1.57079
+  name "table 1(5)"
+  size 1 3 0.74
+}
+Table {
+  translation 36.8257 23.5956 0
+  rotation 0 0 -1 3.14159
+  name "table 1(1)"
+  size 2 2 0.74
+}
+Table {
+  translation 26.7957 23.5956 0
+  rotation 0 0 -1 3.14159
+  name "table 1(2)"
+  size 2 2 0.74
+}
+Table {
+  translation 23.3757 23.5956 0
+  rotation 0 0 -1 3.14159
+  name "table 1(3)"
+  size 2 2 0.74
+}
+Table {
+  translation 19.7857 23.5956 0
+  rotation 0 0 -1 3.14159
+  name "table 1(4)"
+  size 2 2 0.74
 }
 Table {
   translation 27.5257 -1.9644 0
@@ -1398,7 +1539,7 @@ Table {
   size 1 3.9 0.74
 }
 Table {
-  translation 28.1557 23.5456 0
+  translation 31.5757 23.5456 0
   rotation 0 0 1 1.5708
   name "table 4"
   size 1 3.9 0.74
@@ -1518,6 +1659,18 @@ Table {
   size 1 2 0.74
 }
 Table {
+  translation -35.27 22.835 0
+  rotation 0 0 1 1.5708
+  name "south colab table"
+  size 1.25 4 0.45
+}
+Table {
+  translation 48.27 22.835 0
+  rotation 0 0 1 1.5708
+  name "north colab table"
+  size 1.25 4 0.45
+}
+Table {
   translation -25.94 -2.35 0
   rotation 0 0 1 -3.1415853071795863
   name "wall table(18)"
@@ -1575,6 +1728,12 @@ Table {
   translation 6.8025 7.4725 0
   rotation 0 0 1 1.5708
   name "atlas stand"
+  size 1.3 1.3 0.74
+}
+Table {
+  translation 14.8225 7.4725 0
+  rotation 0 0 1 1.5708
+  name "square computer table"
   size 1.3 1.3 0.74
 }
 Desk {
@@ -1658,6 +1817,56 @@ WoodenChair {
   translation -3.9787500124877204 19.37230000001061 -0.0005189312899869791
   rotation -0.0002405285264779499 0.08081144343016516 -0.9967293778939 0.0009900230610977105
   name "wooden chair 4"
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
+}
+WoodenChair {
+  translation -2.00326 16.4914 -0.000681675
+  rotation 0 0 1 1.5708
+  name "wooden chair 4(121)"
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
+}
+WoodenChair {
+  translation -0.58326 16.5314 -0.000681675
+  rotation 0 0 1 1.5708
+  name "wooden chair 4(122)"
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
+}
+WoodenChair {
+  translation 0.87674 16.5314 -0.000681675
+  rotation 0 0 1 1.5708
+  name "wooden chair 4(123)"
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
+}
+WoodenChair {
+  translation -1.16322 6.8714 -0.000681675
+  rotation 0 0 1 1.5708
+  name "wooden chair 4(125)"
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
+}
+WoodenChair {
+  translation -1.18324 8.2414 -0.000681675
+  rotation 0 0 1 -1.5707953071795862
+  name "wooden chair 4(124)"
   physics Physics {
     centerOfMass [
       0 0 0.45
@@ -2841,6 +3050,106 @@ WoodenChair {
   }
 }
 WoodenChair {
+  translation 11.2655 1.84201 -0.00212458
+  rotation 3.986213151301635e-05 4.060191866792987e-05 -0.9999999983812474 1.5593484304694227
+  name "wooden chair 4(126)"
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
+}
+WoodenChair {
+  translation 11.2715 1.32201 -0.00216618
+  rotation 4.013979993649431e-05 -3.940839993765147e-05 0.9999999984178873 1.58224
+  name "wooden chair 4(127)"
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
+}
+WoodenChair {
+  translation 14.2647 7.2565 -0.00169513
+  rotation -0.006990816937072963 -6.4276571838134e-05 -0.9999755618749264 -0.011445307179585917
+  name "wooden chair 4(128)"
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
+}
+WoodenChair {
+  translation 14.2593 7.7865 -0.00165273
+  rotation -0.006990816937072963 -6.4276571838134e-05 -0.9999755618749264 -0.011445307179585917
+  name "wooden chair 4(129)"
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
+}
+WoodenChair {
+  translation 15.3393 7.79887 -0.00165304
+  rotation 3.678369997056099e-07 -4.000649996798169e-05 0.9999999991996724 -3.1301453071795864
+  name "wooden chair 4(130)"
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
+}
+WoodenChair {
+  translation 15.3441 7.32887 -0.00169064
+  rotation 3.678369997056099e-07 -4.000649996798169e-05 0.9999999991996724 -3.1301453071795864
+  name "wooden chair 4(131)"
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
+}
+WoodenChair {
+  translation 34.0741 3.98282 -0.00198061
+  rotation 3.678369997056099e-07 -4.000649996798169e-05 0.9999999991996724 -3.1301453071795864
+  name "wooden chair 4(132)"
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
+}
+WoodenChair {
+  translation 32.8141 3.96847 -0.00198026
+  rotation 0.006989407006584498 6.426367247722543e-05 0.9999755717315681 0.0114476
+  name "wooden chair 4(133)"
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
+}
+WoodenChair {
+  translation 42.1616 12.1356 -0.00133802
+  rotation 4.014449993647203e-05 -3.9412999937629613e-05 0.9999999984175174 1.58224
+  name "wooden chair 4(134)"
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
+}
+WoodenChair {
+  translation 42.148 13.3656 -0.00123962
+  rotation -3.986659993545132e-05 -4.060649993425333e-05 0.9999999983808832 -1.5593553071795858
+  name "wooden chair 4(135)"
+  physics Physics {
+    centerOfMass [
+      0 0 0.45
+    ]
+  }
+}
+WoodenChair {
   translation 26.80019999987048 -1.5507699887857578 -0.0005189312899872012
   rotation 3.986213151301592e-05 4.060191866794012e-05 -0.9999999983812474 1.5593484304694238
   name "pi room chair"
@@ -3891,18 +4200,47 @@ Shelves {
 }
 DesktopComputer {
   translation -3.62 22.51 0.82
+  rotation 0 0 1 3.14
 }
 DesktopComputer {
   translation -3.62 21.67 0.82
+  rotation 0 0 1 3.14
   name "desktop computer 2"
 }
 DesktopComputer {
   translation -3.62 20.76 0.82
+  rotation 0 0 1 3.14
   name "desktop computer 2(1)"
 }
 DesktopComputer {
   translation -3.62 19.87 0.82
+  rotation 0 0 1 3.14
   name "desktop computer 2(2)"
+}
+DesktopComputer {
+  translation -2.45 16.94 0.82
+  rotation 0 0 1 -1.5708
+  name "desktop computer 2(3)"
+}
+DesktopComputer {
+  translation -0.75 7.65 0.71
+  rotation 0 0 1 1.5708
+  name "desktop computer 2(6)"
+}
+DesktopComputer {
+  translation -1.68 7.3 0.71
+  rotation 0 0 1 -1.5707953071795862
+  name "desktop computer 2(7)"
+}
+DesktopComputer {
+  translation -1.05 16.94 0.82
+  rotation 0 0 1 -1.5708
+  name "desktop computer 2(4)"
+}
+DesktopComputer {
+  translation 0.33 16.94 0.82
+  rotation 0 0 1 -1.5708
+  name "desktop computer 2(5)"
 }
 Toilet {
   translation -2.01 18.15 0
@@ -3999,9 +4337,37 @@ Armchair {
   name "armchair(3)"
 }
 Armchair {
-  translation -36.24 24.71 0
+  translation -33.52 24.91 0
   rotation 0 0 1 -1.5707953071795862
   name "south colab room chair"
+}
+Armchair {
+  translation -34.62 24.91 0
+  rotation 0 0 1 -1.5707953071795862
+  name "south colab room chair(1)"
+}
+Armchair {
+  translation -35.72 24.91 0
+  rotation 0 0 1 -1.5707953071795862
+  name "south colab room chair(2)"
+}
+Armchair {
+  translation -36.82 24.91 0
+  rotation 0 0 1 -1.5707953071795862
+  name "south colab room chair(3)"
+}
+Armchair {
+  translation -38.1954 24.6346 0
+  rotation 0 0 -1 0.785397
+  name "south colab room chair(4)"
+}
+Armchair {
+  translation -38.47 22.17 0
+  name "south colab room chair(5)"
+}
+Armchair {
+  translation -38.47 23.27 0
+  name "south colab room chair(6)"
 }
 Armchair {
   translation 47.38 24.71 0
