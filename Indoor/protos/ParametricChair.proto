@@ -1,0 +1,149 @@
+#VRML_SIM R2023b utf8
+# license: ...
+# template language: javascript
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/VarnishedPine.proto"
+
+PROTO ParametricChair [
+  field SFVec3f    translation     0 0 0
+  field SFRotation rotation        0 0 1 0
+  field SFString   name            "parametric chair"
+  field SFColor    color           0.8 0.5 0.3          # Color of the chair.
+  field SFNode     physics         NULL                 # Physics properties.
+  
+  # Chair parameters
+  field SFFloat    legHeight       0.45                 # Height of the legs.
+  field SFFloat    seatHeight      0.05                 # Thickness of the seat.
+  field SFFloat    seatWidth       0.4                  # Width of the seat.
+  field SFFloat    seatDepth       0.4                  # Depth of the seat.
+  field SFFloat    backrestHeight  0.5                  # Height of the backrest.
+  field SFFloat    backrestAngle   10                   # Backrest angle in degrees.
+  field SFFloat    legThickness    0.03                 # Thickness of the legs.
+]
+{
+  %<  // Start of JavaScript code
+    // Validate parameters
+    let legHeight = Math.max(0, fields.legHeight.value);
+    let seatHeight = Math.max(0.01, fields.seatHeight.value);
+    let seatWidth = Math.max(0.1, fields.seatWidth.value);
+    let seatDepth = Math.max(0.1, fields.seatDepth.value);
+    let backrestHeight = Math.max(0, fields.backrestHeight.value);
+    let backrestAngle = Math.min(Math.max(0, fields.backrestAngle.value), 90); // Allow up to 90 degrees
+    let legThickness = Math.max(0.01, fields.legThickness.value);
+    
+    // Calculations
+    let halfSeatWidth = seatWidth / 2;
+    let halfSeatDepth = seatDepth / 2;
+    let halfLegThickness = legThickness / 2;
+    let legOffsetX = halfSeatWidth - halfLegThickness;
+    let legOffsetY = halfSeatDepth - halfLegThickness;
+    
+    // Convert backrest angle to radians
+    let backrestAngleRad = backrestAngle * Math.PI / 180;
+    
+    // Backrest position calculations
+    // Position the backrest to pivot at the top of the seat's back edge
+    let backrestOffsetZ = legHeight + seatHeight + (backrestHeight / 2) * Math.cos(backrestAngleRad);
+    let backrestOffsetY = -halfSeatDepth - (backrestHeight / 2) * Math.sin(backrestAngleRad);
+  >%
+
+  Solid {
+    translation IS translation
+    rotation IS rotation
+    children [
+      # Chair Legs
+      Shape {
+        appearance VarnishedPine {
+          colorOverride IS color
+        }
+        geometry IndexedFaceSet {
+          coord Coordinate {
+            point [
+              # Front Right Leg
+              %<= legOffsetX - halfLegThickness >% %<= legOffsetY - halfLegThickness >% 0,
+              %<= legOffsetX + halfLegThickness >% %<= legOffsetY - halfLegThickness >% 0,
+              %<= legOffsetX + halfLegThickness >% %<= legOffsetY + halfLegThickness >% 0,
+              %<= legOffsetX - halfLegThickness >% %<= legOffsetY + halfLegThickness >% 0,
+              %<= legOffsetX - halfLegThickness >% %<= legOffsetY - halfLegThickness >% %<= legHeight >%,
+              %<= legOffsetX + halfLegThickness >% %<= legOffsetY - halfLegThickness >% %<= legHeight >%,
+              %<= legOffsetX + halfLegThickness >% %<= legOffsetY + halfLegThickness >% %<= legHeight >%,
+              %<= legOffsetX - halfLegThickness >% %<= legOffsetY + halfLegThickness >% %<= legHeight >%,
+              
+              # Front Left Leg (mirror along x)
+              %<= -legOffsetX - halfLegThickness >% %<= legOffsetY - halfLegThickness >% 0,
+              %<= -legOffsetX + halfLegThickness >% %<= legOffsetY - halfLegThickness >% 0,
+              %<= -legOffsetX + halfLegThickness >% %<= legOffsetY + halfLegThickness >% 0,
+              %<= -legOffsetX - halfLegThickness >% %<= legOffsetY + halfLegThickness >% 0,
+              %<= -legOffsetX - halfLegThickness >% %<= legOffsetY - halfLegThickness >% %<= legHeight >%,
+              %<= -legOffsetX + halfLegThickness >% %<= legOffsetY - halfLegThickness >% %<= legHeight >%,
+              %<= -legOffsetX + halfLegThickness >% %<= legOffsetY + halfLegThickness >% %<= legHeight >%,
+              %<= -legOffsetX - halfLegThickness >% %<= legOffsetY + halfLegThickness >% %<= legHeight >%,
+              
+              # Back Right Leg (mirror along y)
+              %<= legOffsetX - halfLegThickness >% %<= -legOffsetY - halfLegThickness >% 0,
+              %<= legOffsetX + halfLegThickness >% %<= -legOffsetY - halfLegThickness >% 0,
+              %<= legOffsetX + halfLegThickness >% %<= -legOffsetY + halfLegThickness >% 0,
+              %<= legOffsetX - halfLegThickness >% %<= -legOffsetY + halfLegThickness >% 0,
+              %<= legOffsetX - halfLegThickness >% %<= -legOffsetY - halfLegThickness >% %<= legHeight >%,
+              %<= legOffsetX + halfLegThickness >% %<= -legOffsetY - halfLegThickness >% %<= legHeight >%,
+              %<= legOffsetX + halfLegThickness >% %<= -legOffsetY + halfLegThickness >% %<= legHeight >%,
+              %<= legOffsetX - halfLegThickness >% %<= -legOffsetY + halfLegThickness >% %<= legHeight >%,
+              
+              # Back Left Leg (mirror along x and y)
+              %<= -legOffsetX - halfLegThickness >% %<= -legOffsetY - halfLegThickness >% 0,
+              %<= -legOffsetX + halfLegThickness >% %<= -legOffsetY - halfLegThickness >% 0,
+              %<= -legOffsetX + halfLegThickness >% %<= -legOffsetY + halfLegThickness >% 0,
+              %<= -legOffsetX - halfLegThickness >% %<= -legOffsetY + halfLegThickness >% 0,
+              %<= -legOffsetX - halfLegThickness >% %<= -legOffsetY - halfLegThickness >% %<= legHeight >%,
+              %<= -legOffsetX + halfLegThickness >% %<= -legOffsetY - halfLegThickness >% %<= legHeight >%,
+              %<= -legOffsetX + halfLegThickness >% %<= -legOffsetY + halfLegThickness >% %<= legHeight >%,
+              %<= -legOffsetX - halfLegThickness >% %<= -legOffsetY + halfLegThickness >% %<= legHeight >%,
+            ]
+          }
+          # Indices to create faces for legs
+          coordIndex [
+            # Front Right Leg
+            0,1,5,-1, 0,5,4,-1, 1,2,6,-1, 1,6,5,-1, 2,3,7,-1, 2,7,6,-1, 3,0,4,-1, 3,4,7,-1,
+            # Front Left Leg
+            8,9,13,-1, 8,13,12,-1, 9,10,14,-1, 9,14,13,-1, 10,11,15,-1, 10,15,14,-1, 11,8,12,-1, 11,12,15,-1,
+            # Back Right Leg
+            16,17,21,-1, 16,21,20,-1, 17,18,22,-1, 17,22,21,-1, 18,19,23,-1, 18,23,22,-1, 19,16,20,-1, 19,20,23,-1,
+            # Back Left Leg
+            24,25,29,-1, 24,29,28,-1, 25,26,30,-1, 25,30,29,-1, 26,27,31,-1, 26,31,30,-1, 27,24,28,-1, 27,28,31,-1
+          ]
+        }
+      }
+      # Seat
+      Transform {
+        translation 0 0 %<= legHeight + seatHeight / 2 >%
+        children [
+          Shape {
+            appearance VarnishedPine {
+              colorOverride IS color
+            }
+            geometry Box {
+              size %<= seatWidth >% %<= seatDepth >% %<= seatHeight >%
+            }
+          }
+        ]
+      }
+      # Backrest
+      Transform {
+        translation 0 %<= backrestOffsetY >% %<= backrestOffsetZ >%
+        rotation 1 0 0 %<= backrestAngleRad >%
+        children [
+          Shape {
+            appearance VarnishedPine {
+              colorOverride IS color
+            }
+            geometry Box {
+              size %<= seatWidth >% %<= backrestHeight >% %<= seatHeight >%
+            }
+          }
+        ]
+      }
+    ]
+    name IS name
+    physics IS physics
+  }
+}
