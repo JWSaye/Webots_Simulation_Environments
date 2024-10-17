@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'Indoor'
+package_name = 'indoor_sim_env'
 
 data_files = []
 data_files.append(('share/ament_index/resource_index/packages', ['resource/' + package_name]))
@@ -13,6 +13,10 @@ data_files.append(('share/' + package_name, ['package.xml']))
 data_files.append(('share/' + package_name + '/resource', [
     'resource/turtlebot_webots.urdf',
     'resource/ros2control.yml',
+]))
+data_files.append(('share/' + package_name + '/protos', [
+    'protos/Bathroom_counter.proto',
+    'protos/Shelves.proto',
 ]))
 
 setup(
@@ -29,7 +33,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'launch.frontend.launch_extension': ['launch_ros = launch_ros'],    
-        'console_scripts': ['Indoor = Indoor.Indoor:main']
+        'console_scripts': ['indoor_sim_env = indoor_sim_env.indoor_sim_env:main']
     },
 
 )

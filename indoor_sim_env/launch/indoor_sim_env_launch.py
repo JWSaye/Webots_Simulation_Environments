@@ -32,7 +32,7 @@ from webots_ros2_driver.wait_for_controller_connection import WaitForControllerC
 
 
 def generate_launch_description():
-    package_dir = get_package_share_directory('Indoor')
+    package_dir = get_package_share_directory('indoor_sim_env')
     world = LaunchConfiguration('world')
     mode = LaunchConfiguration('mode')
     use_sim_time = LaunchConfiguration('use_sim_time', default=True)
