@@ -32,7 +32,7 @@ from webots_ros2_driver.wait_for_controller_connection import WaitForControllerC
 
 
 def generate_launch_description():
-    package_dir = get_package_share_directory('indoor_sim_env')
+    package_dir = get_package_share_directory('outdoor_sim_env')
     world = LaunchConfiguration('world')
     mode = LaunchConfiguration('mode')
     use_sim_time = LaunchConfiguration('use_sim_time', default=True)
@@ -104,8 +104,8 @@ def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument(
             'world',
-            default_value='Rodgers Floor 2.wbt',
-            description='Choose one of the world files from `/indoor_sim_env/world` directory'
+            default_value='SnowHinton.wbt',
+            description='Choose one of the world files from `/outdoor_sim_env/world` directory'
         ),
         DeclareLaunchArgument(
             'mode',
