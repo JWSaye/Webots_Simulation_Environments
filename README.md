@@ -1,4 +1,4 @@
-## How to launch Webots Environment using ROS2
+## How to launch Indoor Webots Environment using ROS2
 1. Navigate to the Indoor directory and type:
 ```bash
 	source /opt/ros/humble/setup.bash
@@ -21,3 +21,22 @@
 
 ##### Note: 
 Yes, there are a lot of lights... Yes, the simulation runs at about a frame a second at best... I underestimated greatly how large Rodgers really is... My bad <3
+
+
+## How to launch Outdoor Webots Environment using ROS2
+1. Navigate to the Outdoor directory and type:
+```bash
+	source /opt/ros/humble/setup.bash
+	export WEBOTS_HOME=/mnt/c/Program\ Files/Webots
+	colcon build
+	source install/setup.bash
+	ros2 launch outdoor_sim_env_launch outdoor_sim_env_launch.py
+```
+
+## How to manipulate lighting
+1. First start the Webots application
+2. Click on the TexturedBackgroundLight object
+3. Select a texture from the drop down menu to change the lighting of the scene
+
+##### Note:
+This model should run a lot smoother <3
